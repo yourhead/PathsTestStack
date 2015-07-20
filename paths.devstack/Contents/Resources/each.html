@@ -1,0 +1,71 @@
+
+<style>
+h3,h4 {
+	margin-top:10px;
+}
+</style>
+<h3>Paths</h3>
+
+<h4>Stacks CSS File Path</h4>
+Path: <code>&#37;cssPath&#37;</code> <br>
+Expected: <code>files/stacks_page_[page_id].css</code> <br>
+Actual: <code>%cssPath%</code> <br>
+
+
+<h4>Stacks JS File Path</h4>
+Path: <code>&#37;jsPath&#37;</code> <br>
+Expected: <code>files/stacks_page_[page_id].js</code> <br>
+Actual: <code>%jsPath%</code> <br>
+
+
+<h4>Stacks PHP File Path</h4>
+Path: <code>&#37;phpPath&#37;</code> <br>
+Expected: <code>files/stacks_page_[page_id].php</code> <br>
+Actual: <code>%phpPath%</code> <br>
+
+
+<h4>Site Asset Path</h4>
+Path: <code>&#37;siteAssetPath&#37;</code> <br>
+%[if edit]% Expected (Edit): file URL to this stack's Resources folder <br>%[endif]%
+%[if preview]% Expected (Preview): <code>files</code> <br>%[endif]%
+%[if publish]% Expected (Export): <code>rw_common/plugins/stacks</code> (Note: varies depending on user's Advanced site settings for path style) <br>%[endif]%
+Actual: <code>%siteAssetPath%</code> <br>
+
+
+<h4>Relative Site Asset Path</h4>
+Path: <code>&#37;relativeSiteAssetPath&#37;</code> <br>
+%[if edit]% Expected (Edit): file URL to this stack's Resources folder <br>%[endif]%
+%[if preview]% Expected (Preview): <code>[path to docroot]rw_common/plugins/stacks</code> <br>%[endif]%
+%[if publish]% Expected (Export): <code>[path to docroot]rw_common/plugins/stacks</code> <br>%[endif]%
+Actual: <code>%relativeSiteAssetPath%</code> <br>
+
+
+<h4>BaseURL</h4>
+Path: <code>&#37;baseURL&#37;</code> <br>
+Expected: the value the user entered as the sties URL <br>
+Actual: <code>%baseURL%</code> <br>
+
+
+<h4>Asset Path</h4>
+Path: <code>&#37;assetPath&#37;</code> <br>
+%[if edit]% Expected (Edit): file URL to this stack's Resources folder <br>%[endif]%
+%[if preview]% Expected (Preview): <code>files</code> <br>%[endif]%
+%[if publish]% Expected (Export): <code>fiels</code> <br>%[endif]%
+Actual: <code>%assetPath%</code> <br>
+
+
+<h4>relativeDocRoot</h4>
+Path: <code>&#37;relativeDocRoot&#37;</code> <br>
+%[if edit]% Expected (Edit): "" (the current directory) <br>%[endif]%
+%[if preview]% Expected (Preview): <code>[path to docroot]</code> <br>%[endif]%
+%[if publish]% Expected (Export): <code>[path to docroot]</code> <br>%[endif]%
+Actual: <code>%relativeDocRoot%</code> <br>
+
+
+<h4>rapidweaverAssetPath</h4>
+Path: <code>&#37;rapidweaverAssetPath&#37;</code> <br>
+%[if edit]% Expected (Edit): <code>files</code> <br>%[endif]%
+%[if preview]% Expected (Preview): <code>resources</code> <br>%[endif]%
+%[if publish]% Expected (Export): <code>[path to docRoot]resources</code> <br>%[endif]%
+Actual: <code>%rapidweaverAssetPath%</code> <br>
+
