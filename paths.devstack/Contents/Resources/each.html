@@ -1,71 +1,304 @@
 
-<style>
-h3,h4 {
-	margin-top:10px;
-}
-</style>
+
+
 <h3>Paths</h3>
+<hr>
+Base URL: &nbsp;&nbsp;<code>%baseURL%</code><br>
+Page Filename:&nbsp;&nbsp;<code>%pageFilename%</code><br>
+Page Nav Title: &nbsp;&nbsp;<code>%pageNavigationTitle%</code><br>
+Page Path: &nbsp;&nbsp;<code>%pagePath%</code><br>
+Page Title: &nbsp;&nbsp;<code>%pageTitle%</code><br>
+Page Unique ID: &nbsp;&nbsp;<code>%pageId%</code><br>
+<hr>
+Asset Path: &nbsp;&nbsp;<code>%assetPath%</code><br>
+CSS Path: &nbsp;&nbsp;<code>%cssPath%</code><br>
+JS Path: &nbsp;&nbsp;<code>%jsPath%</code><br>
+Php Path: &nbsp;&nbsp;<code>%phpPath%</code><br>
+RW Asset Path: &nbsp;&nbsp;<code>%rapidweaverAssetPath%</code><br>
+Relative Site Root: &nbsp;&nbsp;<code>%relativeDocRoot%</code><br>
+Relative Site Asset Path: &nbsp;&nbsp;<code>%relativeSiteAssetPath%</code><br>
+Site Asset Path: &nbsp;&nbsp;<code>%siteAssetPath%</code><br>
+<hr>
+<br>
+<hr>
+<br>
+
+
+<h3>Self Check</h3>
+
+<h4>Overview</h4>
+<p>
+The self checks use CSS, JS, and Php to check the API values against the actual
+values that are present in the previewed and published pages.<br>
+A minimal set of templates and assets are loaded to verify that their actual
+paths are the same as the paths returned in the API.
+</p>
+
+<h4>Use</h4>
+<p>
+To use this stack it should be placed alone in a stacks page. The asset test requires
+a resource named <code>rwAsset.css</code> and it should have the content:<br>
+<code>
+span#css-rw-asset-loaded::before {
+    content: "👍";
+}
+</code>
+</p>
+
+<h4>Test Conditions</h4>
+<p>
+This stack should return all thumbs up in these test conditions:<br>
+Pages: homepage, nominal-page, sub-page, shared folder-page, shared-folder sub-page, shared-folder homepage<br>
+RW Versions: v6, v7.1, and v8.1<br>
+Links relative to: Page, DOCROOT, site URL.<br>
+</p>
+
+
+<style>
+	h3,h4 {
+	}
+	.template-loaded::before {
+		content: "👎";
+	}
+</style>
+
+
+<hr>
+<h3>Stack Templates</h4>
+
+<p>
+The teplate self checks rely on the three main templates built into this stack. 
+The JS and PHP lines are shown only in Preview/Publish modes.
+</p>
+
+<?php 
+ include "%phpPath%";
+?>
+
+Css Template Loaded: <span id='css-template-loaded' class='template-loaded'></span> <br>
+%%[[if !edit]]%%
+Js Template Loaded: <span id='js-template-loaded'>👎</span> <br>
+Php Template Loaded: <span id='php-template-loaded' class='template-loaded'></span> <br>
+%%[[endif]]%%
+
+
+<hr>
+<h3>Stack Assets</h3>
+
+<p>
+The assets load three separate asset files using the asset-path template variables. 
+The rapidweaver asset path will only display in Preview/Publish modes.
+</p>
+
+<link rel="stylesheet" type="text/css" media="all" href="%assetPath%/asset.css" />
+<link rel="stylesheet" type="text/css" media="all" href="%siteAssetPath%/siteAsset.css" />
+<link rel="stylesheet" type="text/css" media="all" href="%rapidweaverAssetPath%/rwAsset.css" />
+
+Asset Loaded: <span id='css-asset-loaded' class='template-loaded'></span> <br>
+Site Asset Loaded: <span id='css-site-asset-loaded' class='template-loaded'></span> <br>
+%%[[if !edit]]%%
+RW Asset Loaded: <span id='css-rw-asset-loaded' class='template-loaded'></span> <br>
+%%[[endif]]%%
+<hr>
+
+%%[[if !edit]]%%
+<h3>Page Values</h3>
+
+<p>
+Check the API values against the actual DOM values and published paths
+</p>
+
+
+<?php 
+
+// base url
+// - there is no way to check this value from the content
+
+// page filename
+$filename = basename (__FILE__);
+$pageFilenameCheck = ("$filename" == "%pageFilename%") ? '👍' : '👎' ;
+
+// page nav title
+// the nav title is easier to extract from the DOM
+// - tested below in js function testNavTitle ()
+
+// page path
+$pagePath = __FILE__;
+$pattern = '/^.*RWDocumentPagePreview\//'; // strip off the temp dir path components
+$pagePath = preg_replace ($pattern, '', $pagePath);
+$pagePath = dirname ($pagePath);
+$pagePath = ($pagePath == '.') ? './' : $pagePath; // exception for home folder
+$pagePathCheck = ("$pagePath" == "%pagePath%") ? '👍' : '👎' ;
+
+// page Title
+// the page title is easier to extract from the DOM using JS
+// - tested in js function testPageTitle ()
+
+// page unique id
+// - this value is not garanteed to be part of the DOM, but should at least
+//   be self consistent with other API values, like the CSS/JS filenames.
+$pageId = basename ('%cssPath%', '.css');
+$pattern = '/^stacks_page_/';
+$pageId = preg_replace ($pattern, '', $pageId);
+$pageIdCheck = ("$pageId" == "%pageId%") ? '👍' : '👎' ;
+
+?>
+
+Page Filename: <span><?php echo $pageFilenameCheck; ?></span> <br>
+Page Nav Title: <span id='nav-title-check'>👎</span> <br>
+Page Path: <span><?php echo $pagePathCheck; ?></span> <br>
+Page Title: <span id='page-title-check'>👎</span> <br>
+Page ID: <span><?php echo $pageIdCheck; ?></span> <br>
+
+<hr>
+%%[[endif]]%%
+
+<br>
+
+
+<h3>Template Paths</h3>
+<p>
+Check that the template paths agree with the templates that were actually loaded on the page.
+</p>
 
 <h4>Stacks CSS File Path</h4>
 Path: <code>&#37;cssPath&#37;</code> <br>
-Expected: <code>files/stacks_page_[page_id].css</code> <br>
-Actual: <code>%cssPath%</code> <br>
+API Value: <code>%cssPath%</code> <br>
+%%[[if !edit]]%%
+DOM Value: <code id='css-path-real'></code> <br>
+Check: <span id='css-path-check'>👎</span> <br>
+%%[[endif]]%%
 
 
+%%[[if !edit]]%%
 <h4>Stacks JS File Path</h4>
 Path: <code>&#37;jsPath&#37;</code> <br>
-Expected: <code>files/stacks_page_[page_id].js</code> <br>
-Actual: <code>%jsPath%</code> <br>
+API Value: <code>%jsPath%</code> <br>
+DOM Value: <code id='js-path-real'></code> <br>
+Check: <span id='js-path-check'>👎</span> <br>
 
 
 <h4>Stacks PHP File Path</h4>
 Path: <code>&#37;phpPath&#37;</code> <br>
 Expected: <code>files/stacks_page_[page_id].php</code> <br>
-Actual: <code>%phpPath%</code> <br>
+API Value: <code>%phpPath%</code> <br>
+File Exists: 
+<?php
+	$exists = file_exists ('%phpPath%');
+	echo ($exists) ? '👍' : '👎' ;
+?>
+<br>
+%%[[endif]]%%
 
 
-<h4>Site Asset Path</h4>
-Path: <code>&#37;siteAssetPath&#37;</code> <br>
-%[if edit]% Expected (Edit): file URL to this stack's Resources folder <br>%[endif]%
-%[if preview]% Expected (Preview): <code>files</code> <br>%[endif]%
-%[if publish]% Expected (Export): <code>rw_common/plugins/stacks</code> (Note: varies depending on user's Advanced site settings for path style) <br>%[endif]%
-Actual: <code>%siteAssetPath%</code> <br>
+<script>
+	
+	function folderName () {
+		var folder = '%pagePath%';
+		if (!folder) return nil;
+		regex = /^.*\//gi;
+		folder = folder.replace (regex, '');
+		return folder;
+	}
+
+	function pathFromHref (href) {
+		if (!href) return nil;
+		var folder = folderName ();
+		var regex = new RegExp ('http:.*' + folder + '\/');
+		if (folder.length < 1) {
+			regex = new RegExp ('http:\/\/[0-9.:/]*' + folder + '\/');
+		}
+		var path = href.replace (regex, '');
+		return path;
+	}
+	
+	
+	function cssHref () {
+		var styles = document.styleSheets;
+		for (var i=0; i<styles.length; i++) {
+			if (styles[i].href.match("stacks_page_")) {
+				return styles[i].href;
+			}
+		}
+		return nil;
+	}
+	
+	
+	function jsHref () {
+		var scripts = document.getElementsByTagName('script');
+		for (var i=0; i<scripts.length; i++) {
+			if (scripts[i].src.match("stacks_page_")) {
+				return scripts[i].src;
+			}
+		}
+		return nil;
+	}
+	
+	
+	function cssPath () {
+		return pathFromHref (cssHref ());
+	}
+	
+	function jsPath () {
+		return pathFromHref (jsHref ());
+	}
+	
+	
+	function testCssPath () {
+		var pathReal = cssPath ();
+		var pathAPI = '%cssPath%';
+		var checkPass = (pathReal && pathAPI && (pathReal === pathAPI));
+		
+		var pathRealElement = document.getElementById ("css-path-real");
+		var pathCheckElement = document.getElementById ("css-path-check");
+		
+		pathRealElement.innerHTML = pathReal;
+		pathCheckElement.innerHTML = (checkPass) ? '👍' : '👎';
+	}
 
 
-<h4>Relative Site Asset Path</h4>
-Path: <code>&#37;relativeSiteAssetPath&#37;</code> <br>
-%[if edit]% Expected (Edit): file URL to this stack's Resources folder <br>%[endif]%
-%[if preview]% Expected (Preview): <code>[path to docroot]rw_common/plugins/stacks</code> <br>%[endif]%
-%[if publish]% Expected (Export): <code>[path to docroot]rw_common/plugins/stacks</code> <br>%[endif]%
-Actual: <code>%relativeSiteAssetPath%</code> <br>
+	// compare the js path extracted from the DOM to the js path returned from the API
+	// "real" => the path extracted from the dom using jsPath ()
+	// "actual" => the path returned in %jsPath%
+	function testJsPath () {
+		var pathReal = jsPath ();
+		var pathAPI = '%jsPath%';
+		var checkPass = (pathReal && pathAPI && (pathReal === pathAPI));
+		
+		var pathRealElement = document.getElementById ("js-path-real");
+		var pathCheckElement = document.getElementById ("js-path-check");
+		
+		pathRealElement.innerHTML = pathReal;
+		pathCheckElement.innerHTML = (checkPass) ? '👍' : '👎';
+	}
+
+	function testNavTitle () {
+		var currentElement = document.getElementById ("current");
+		var real = currentElement.innerHTML;
+		var api = '%pageNavigationTitle%';
+		var checkPass = (real && api && (real === api));
+
+		var checkElement = document.getElementById ("nav-title-check");
+		checkElement.innerHTML = (checkPass) ? '👍' : '👎';
+	}
+
+	function testPageTitle () {
+		//console.log ('page title 1: "' + document.title + '"');
+		//console.log ('page title 2: "%pageTitle%"');
+		var checkPass = (document.title === '%pageTitle%');
+		var checkElement = document.getElementById ("page-title-check");
+		checkElement.innerHTML = (checkPass) ? '👍' : '👎';
+	}
 
 
-<h4>BaseURL</h4>
-Path: <code>&#37;baseURL&#37;</code> <br>
-Expected: the value the user entered as the sties URL <br>
-Actual: <code>%baseURL%</code> <br>
-
-
-<h4>Asset Path</h4>
-Path: <code>&#37;assetPath&#37;</code> <br>
-%[if edit]% Expected (Edit): file URL to this stack's Resources folder <br>%[endif]%
-%[if preview]% Expected (Preview): <code>files</code> <br>%[endif]%
-%[if publish]% Expected (Export): <code>fiels</code> <br>%[endif]%
-Actual: <code>%assetPath%</code> <br>
-
-
-<h4>relativeDocRoot</h4>
-Path: <code>&#37;relativeDocRoot&#37;</code> <br>
-%[if edit]% Expected (Edit): "" (the current directory) <br>%[endif]%
-%[if preview]% Expected (Preview): <code>[path to docroot]</code> <br>%[endif]%
-%[if publish]% Expected (Export): <code>[path to docroot]</code> <br>%[endif]%
-Actual: <code>%relativeDocRoot%</code> <br>
-
-
-<h4>rapidweaverAssetPath</h4>
-Path: <code>&#37;rapidweaverAssetPath&#37;</code> <br>
-%[if edit]% Expected (Edit): <code>files</code> <br>%[endif]%
-%[if preview]% Expected (Preview): <code>resources</code> <br>%[endif]%
-%[if publish]% Expected (Export): <code>[path to docRoot]resources</code> <br>%[endif]%
-Actual: <code>%rapidweaverAssetPath%</code> <br>
-
+	
+	(function() {
+		testCssPath ();
+		testJsPath ();		
+		testNavTitle ();		
+		testPageTitle ();		
+	})();
+	
+	
+	
+</script>

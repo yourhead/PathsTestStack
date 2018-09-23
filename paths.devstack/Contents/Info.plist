@@ -16,6 +16,24 @@
 			<key>filename</key>
 			<string>each.html</string>
 		</dict>
+		<dict>
+			<key>type</key>
+			<string>css</string>
+			<key>filename</key>
+			<string>dummy.css</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>js</string>
+			<key>filename</key>
+			<string>dummy.js</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>php</string>
+			<key>filename</key>
+			<string>dummy.php</string>
+		</dict>
 	</array>
 	<key>icon</key>
 	<string>icon</string>
@@ -23,6 +41,26 @@
 	<array>
 		<string>Test</string>
 		<string>API</string>
+	</array>
+	<key>libraries</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>jQuery</string>
+		</dict>
+	</array>
+	<key>assets</key>
+	<array>
+		<dict>
+			<key>filename</key>
+			<string>asset.css</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>siteAsset.css</string>
+			<key>siteAsset</key>
+			<true/>
+		</dict>
 	</array>
 </dict>
 </plist>

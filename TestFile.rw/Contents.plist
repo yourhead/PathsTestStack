@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Creator</key>
+	<string>RapidWeaver</string>
+	<key>SandwichFillings</key>
+	<array>
+		<dict>
+			<key>Dictionary</key>
+			<dict>
+				<key>File References</key>
+				<dict>
+					<key>App Scope</key>
+					<false/>
+					<key>File References</key>
+					<array>
+						<dict>
+							<key>fullPath</key>
+							<string>rwAsset.css</string>
+							<key>identifier</key>
+							<string>F6F50740-0756-4184-937C-221BBCDCE847</string>
+							<key>isInternal</key>
+							<true/>
+						</dict>
+					</array>
+				</dict>
+				<key>Minimum Application Version</key>
+				<string>7.1</string>
+				<key>PublishingManifests</key>
+				<dict/>
+				<key>Site Resources</key>
+				<data>
+				YnBsaXN0MDDUAQIDBAUGhIVYJHZlcnNpb25YJG9iamVj
+				dHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QGwcIExQVHyM1
+				Njc4PEJGSk5SWF5maW1ydnp+glUkbnVsbNMJCgsMDxJX
+				TlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6INDoACgAOi
+				EBGABIAVgBpYZGF0YWJhc2VUbm9kZdULFhcYGRobHB0e
+				XklkZW50aWZpZXIgTWFwWFBhZ2UgTWFwWE5vZGUgTWFw
+				WVJlc291cmNlc4AZgBCAGIARgAXSCgsgIqEhgAaAD9kk
+				CyUmJygpKissLS4uMDEyMzReUmVtb3RlUmVzb3VyY2Vc
+				UHVibGlzaGVkVVJMXVB1Ymxpc2hlZERhdGVfEA9DaGFu
+				Z2VkU3RhdHVzZXNUTmFtZVpJZGVudGlmaWVyWVRpbWVT
+				dGFtcFlGaWxlVG9rZW4IgA6AAIAAgAyACIAHgAqACV8Q
+				JEM5RTU2MTIxLUU1QkYtNDQyMy1BREZCLTMyQ0VCRjQ2
+				RERFMVtyd0Fzc2V0LmNzc18QJEY2RjUwNzQwLTA3NTYt
+				NDE4NC05MzdDLTIyMUJCQ0RDRTg0N9I5Czo7V05TLnRp
+				bWUjQcCrHPhaIDGAC9I9Pj9AWiRjbGFzc25hbWVYJGNs
+				YXNzZXNWTlNEYXRloj9BWE5TT2JqZWN00wkKC0NERaCg
+				gA3SPT5HSF8QE05TTXV0YWJsZURpY3Rpb25hcnmjR0lB
+				XE5TRGljdGlvbmFyedI9PktMXlJXU2l0ZVJlc291cmNl
+				ok1BXlJXU2l0ZVJlc291cmNl0j0+T1BcTlNNdXRhYmxl
+				U2V0o09RQVVOU1NldNMJCgtTVUWhMoAHoSGABoAN0wkK
+				C1lbRaEygAehXIASgA3UC19gYWJjESFYQ2hpbGRyZW5W
+				UGFyZW50XxASUmVwcmVzZW50ZWQgT2JqZWN0gBeAE4AV
+				gAbSCgtnaKCAFNI9PmprXk5TTXV0YWJsZUFycmF5o2ps
+				QVdOU0FycmF51AtfYGFiby4ugBeAFoAAgADSCgtzaKFc
+				gBKAFNI9Pnd4XxAQUldTb3VyY2VMaXN0Tm9kZaJ5QV8Q
+				EFJXU291cmNlTGlzdE5vZGXTCQoLe3xFoKCADdI9Pn+A
+				XxASUldSZXNvdXJjZURhdGFiYXNlooFBXxASUldSZXNv
+				dXJjZURhdGFiYXNl0j0+SYOiSUFfEA9OU0tleWVkQXJj
+				aGl2ZXLRhodUcm9vdIABAAgAEQAaACMALQAyADcAVQBb
+				AGIAagB1AHwAfwCBAIMAhgCIAIoAjACVAJoApQC0AL0A
+				xgDQANIA1ADWANgA2gDfAOEA4wDlAPgBBwEUASIBNAE5
+				AUQBTgFYAVkBWwFdAV8BYQFjAWUBZwFpAZABnAHDAcgB
+				0AHZAdsB4AHrAfQB+wH+AgcCDgIPAhACEgIXAi0CMQI+
+				AkMCUgJVAmQCaQJ2AnoCgAKHAokCiwKNAo8CkQKYApoC
+				nAKeAqACogKrArQCuwLQAtIC1ALWAtgC3QLeAuAC5QL0
+				AvgDAAMJAwsDDQMPAxEDFgMYAxoDHAMhAzQDNwNKA1ED
+				UgNTA1UDWgNvA3IDhwOMA48DoQOkA6kAAAAAAAACAQAA
+				AAAAAACIAAAAAAAAAAAAAAAAAAADqw==
+				</data>
+				<key>SiteAttributes</key>
+				<dict>
+					<key>AddCopyrightMailTo</key>
+					<false/>
+					<key>BannerUsed</key>
+					<false/>
+					<key>ConsolidateCSSFiles</key>
+					<true/>
+					<key>ConsolidateCommonFilesMode</key>
+					<integer>0</integer>
+					<key>ContactText</key>
+					<string>Contact Me</string>
+					<key>CopyrightText</key>
+					<string>© 2018 Isaiah Carew</string>
+					<key>CopyrightTextUsed</key>
+					<false/>
+					<key>CruftlessLinksEnabled</key>
+					<true/>
+					<key>DirectoryIndexFilenames</key>
+					<array>
+						<string>index.php</string>
+						<string>index.htm</string>
+						<string>index.html</string>
+					</array>
+					<key>EmailAddress</key>
+					<string></string>
+					<key>FavIconUsed</key>
+					<false/>
+					<key>LogoUsed</key>
+					<false/>
+					<key>ObfuscateEmailAddress</key>
+					<true/>
+					<key>PinnedTabIconUsed</key>
+					<false/>
+					<key>PublishingDestinations</key>
+					<array/>
+					<key>PublishingSettingsConfigured</key>
+					<false/>
+					<key>SettingsPlugins</key>
+					<array/>
+					<key>ShowBreadcrumbTrail</key>
+					<false/>
+					<key>SloganText</key>
+					<string>Changing the world, one site at a time…</string>
+					<key>SloganUsed</key>
+					<false/>
+					<key>ThemeName</key>
+					<string>Alpha</string>
+					<key>TitleText</key>
+					<string>My Website</string>
+					<key>TitleTextUsed</key>
+					<false/>
+					<key>UniqueBackupName</key>
+					<string>A861FCCF-393A-410A-9BFB-EBD282780E65_rwbackup</string>
+					<key>UserAgentResizingPreset</key>
+					<integer>0</integer>
+					<key>WantsXMLSiteMap</key>
+					<true/>
+					<key>WebClipIconUsed</key>
+					<false/>
+					<key>cacheBustingString</key>
+					<string>?rwcache=559379144</string>
+					<key>hasChangedGlobalBody</key>
+					<false/>
+					<key>hasChangedGlobalCSS</key>
+					<false/>
+					<key>hasChangedGlobalHeader</key>
+					<false/>
+					<key>hasChangedGlobalJavascript</key>
+					<false/>
+					<key>hasChangedGlobalPrefix</key>
+					<false/>
+					<key>minifyExtraFiles</key>
+					<true/>
+					<key>useCacheBusting</key>
+					<false/>
+					<key>useDocumentPortability</key>
+					<true/>
+				</dict>
+			</dict>
+			<key>Files</key>
+			<array/>
+			<key>Subsandwiches</key>
+			<array>
+				<string>DefaultPageAttributes</string>
+				<string>Pages</string>
+				<string>Resources</string>
+				<string>SharedPluginData</string>
+			</array>
+		</dict>
+	</array>
+	<key>Type</key>
+	<string>RapidWeaver Document</string>
+</dict>
+</plist>

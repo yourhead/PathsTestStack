@@ -1,0 +1,4 @@
+
+span#css-rw-asset-loaded::before {
+    content: "👍";
+}

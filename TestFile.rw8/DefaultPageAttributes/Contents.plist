@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Creator</key>
+	<string></string>
+	<key>SandwichFillings</key>
+	<array>
+		<dict>
+			<key>Dictionary</key>
+			<dict>
+				<key>ColourStyles</key>
+				<dict>
+					<key>Alpha</key>
+					<dict/>
+					<key>Artful</key>
+					<dict/>
+					<key>Climate</key>
+					<dict/>
+					<key>Future</key>
+					<dict>
+						<key>%colour_banner_overlay%</key>
+						<string>rgba(172,61,96,0.60)</string>
+					</dict>
+					<key>Notes</key>
+					<dict/>
+					<key>Offroad</key>
+					<dict/>
+					<key>Reason</key>
+					<dict/>
+					<key>Tesla</key>
+					<dict/>
+				</dict>
+				<key>CreditRapidWeaver</key>
+				<true/>
+				<key>DefaultLinkTarget</key>
+				<string></string>
+				<key>FilenameExtension</key>
+				<string>html</string>
+				<key>HasCustomThemeStyle</key>
+				<false/>
+				<key>ImageFormat</key>
+				<string>Original</string>
+				<key>ImageQuality</key>
+				<string>High</string>
+				<key>IndexFilename</key>
+				<string></string>
+				<key>OutputXMLDeclaration</key>
+				<false/>
+				<key>RobotsShouldFollowLinks</key>
+				<true/>
+				<key>RobotsShouldIndexPage</key>
+				<true/>
+				<key>ShouldEnableRobotTags</key>
+				<true/>
+				<key>SidebarEnabled</key>
+				<integer>1</integer>
+				<key>TextEncoding</key>
+				<string>utf-8</string>
+				<key>ThemeStyles</key>
+				<dict>
+					<key>Alpha</key>
+					<array>
+						<string>Sidebar.Hide</string>
+						<string>Width.600px</string>
+					</array>
+					<key>Artful</key>
+					<array>
+						<string>Banner Background.None</string>
+						<string>Banner.Uppercase Title</string>
+						<string>Content Width.Pixels</string>
+						<string>Headings.Uppercase</string>
+						<string>Navigation.Logo</string>
+						<string>Navigation.Uppercase Links</string>
+					</array>
+					<key>Climate</key>
+					<array>
+						<string>Banner Background.Saturate</string>
+						<string>Content Width.Pixels</string>
+						<string>Navigation.Logo</string>
+					</array>
+					<key>Future</key>
+					<array>
+						<string>Banner.Sepia</string>
+						<string>Color Settings.Hide Sidebar</string>
+						<string>Content Width.Pixels</string>
+						<string>Headings.Show Dividers</string>
+						<string>Navigation.Logo</string>
+					</array>
+					<key>Reason</key>
+					<array>
+						<string>Background.Wood</string>
+						<string>Banner Height.Collapse</string>
+						<string>Banner Image.Banner 1</string>
+						<string>Header Opacity.0.4</string>
+						<string>Max Width.1000px</string>
+						<string>Navigation Opacity.0.4</string>
+						<string>Sidebar Position.Hidden</string>
+						<string>Text Size.Medium</string>
+					</array>
+					<key>Tesla</key>
+					<array>
+						<string>Banner Background.Banner 7</string>
+						<string>Maximum Content Width.960 px</string>
+						<string>Sidebar.Hidden</string>
+					</array>
+				</dict>
+				<key>Variables</key>
+				<dict/>
+			</dict>
+			<key>Files</key>
+			<array/>
+			<key>Subsandwiches</key>
+			<array/>
+		</dict>
+	</array>
+	<key>Type</key>
+	<string>Page Attributes</string>
+</dict>
+</plist>
