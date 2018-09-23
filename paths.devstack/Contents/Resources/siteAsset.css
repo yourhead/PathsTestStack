@@ -1,0 +1,4 @@
+
+span#css-site-asset-loaded::before {
+    content: "👍";
+}

@@ -1,0 +1,4 @@
+
+span#css-template-loaded::before {
+    content: "👍";
+}
